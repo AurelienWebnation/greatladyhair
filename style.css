@@ -1,0 +1,19 @@
+/*
+Theme Name: Kendall Enfant par WP Marmite
+Description: Theme enfant du theme Kendall. Vous pouvez desormais le personnaliser sans risquer de perdre vos modifications
+Author: WPMarmite
+Author URI: https://wpmarmite.com
+Template: kendall
+Version: 1.0
+*/
+
+.eltd-mobile-header .eltd-mobile-nav a, .eltd-mobile-header .eltd-mobile-nav h4 {
+    font-family: Raleway,sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    color: #000!important;
+    text-transform: none;
+    line-height: 17px;
+    letter-spacing: 0;
+}
+.eltd-mobile-header.eltd-grid{/*height:100%;*/}
