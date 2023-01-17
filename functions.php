@@ -34,7 +34,7 @@ function woocustomizer_edit_shop_button_text() {
     }
 }
 
-function breadcrumbs() {
+/* function breadcrumbs() {
     global $post;
     echo "<p id='breadcrumbs'>";
     if (!is_home()) {
@@ -69,7 +69,7 @@ function breadcrumbs() {
         echo " » <span>Résultats de recherche pour " . the_search_query() . "</span>";
     }
     echo "</p>";
-}
+} */
 
 add_filter( 'woocommerce_breadcrumb_defaults', 'wcc_change_breadcrumb_delimiter' );
 function wcc_change_breadcrumb_delimiter( $defaults ) {
