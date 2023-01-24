@@ -50,6 +50,8 @@ if ( $kendall_elated_full_width ) { ?>
 yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
 } */
 woocommerce_breadcrumb();
+?>
+<?php
 		if ( $kendall_elated_full_width ) { ?>
 			<div class="eltd-full-width-inner" <?php kendall_elated_inline_style($kendall_elated_content_style); ?>>
 		<?php } else { ?>
@@ -58,7 +60,6 @@ woocommerce_breadcrumb();
 
 			//Woocommerce content
 			if ( ! is_singular('product') ) {
-                $custom_woocommerce_sidebar=kendall_elated_get_woocommerce_sidebar();
 				switch( $kendall_elated_sidebar ) {
 					case 'sidebar-33-right': ?>
 						<div class="eltd-two-columns-66-33 grid2 eltd-woocommerce-with-sidebar clearfix">
@@ -67,87 +68,54 @@ woocommerce_breadcrumb();
 									<?php kendall_elated_woocommerce_content(); ?>
 								</div>
 							</div>
-							<div class="eltd-column2">
-                                <?php
-                                if (is_active_sidebar($custom_woocommerce_sidebar)) {
-                                    dynamic_sidebar($custom_woocommerce_sidebar);
-                                }
-                                else {
-                                    get_sidebar();
-                                }
-                                ?>
-							</div>
 						</div>
-					<?php
-						break;
-					case 'sidebar-25-right': ?>
-						<div class="eltd-two-columns-75-25 grid2 eltd-woocommerce-with-sidebar clearfix">
-							<div class="eltd-column1 eltd-content-left-from-sidebar">
-								<div class="eltd-column-inner">
-									<?php kendall_elated_woocommerce_content(); ?>
-								</div>
-							</div>
-							<div class="eltd-column2">
-                                <?php
-                                if (is_active_sidebar($custom_woocommerce_sidebar)) {
-                                    dynamic_sidebar($custom_woocommerce_sidebar);
-                                }
-                                else {
-                                    get_sidebar();
-                                }
-                                ?>
-							</div>
-						</div>
-					<?php
-						break;
-					case 'sidebar-33-left': ?>
-						<div class="eltd-two-columns-33-66 grid2 eltd-woocommerce-with-sidebar clearfix">
-							<div class="eltd-column1">
-                                <?php
-                                if (is_active_sidebar($custom_woocommerce_sidebar)) {
-                                    dynamic_sidebar($custom_woocommerce_sidebar);
-                                }
-                                else {
-                                    get_sidebar();
-                                }
-                                ?>
-							</div>
-							<div class="eltd-column2">
-								<div class="eltd-column-inner">
-									<?php kendall_elated_woocommerce_content(); ?>
-								</div>
-							</div>
-						</div>
-					<?php
-						break;
-					case 'sidebar-25-left': ?>
-						<div class="eltd-two-columns-25-75 grid2 eltd-woocommerce-with-sidebar clearfix">
-							<div class="eltd-column1">
-                                <?php
-                                if (is_active_sidebar($custom_woocommerce_sidebar)) {
-                                    dynamic_sidebar($custom_woocommerce_sidebar);
-                                }
-                                else {
-                                    get_sidebar();
-                                }
-                                ?>
-							</div>
-							<div class="eltd-column2 eltd-content-right-from-sidebar">
-								<div class="eltd-column-inner">
-									<?php kendall_elated_woocommerce_content(); ?>
-								</div>
-							</div>
-						</div>
-					<?php
-						break;
-					default:
-						kendall_elated_woocommerce_content();
-				}
-
-			} else {
-				kendall_elated_woocommerce_content();
-			} ?>
-
+				
+                          
+					</div>
+				</div>	
 			</div>
 	</div>
+		<?php
+		if (is_product_taxonomy()) {
+    			$term = get_queried_object();
+		?>
+<div class="eltd-accordion-holder clearfix eltd-toggle eltd-boxed accordion ui-accordion ui-accordion-icons ui-widget ui-helper-reset">
+	<h5 class="clearfix eltd-title-holder ui-accordion-header ui-helper-reset ui-state-default ui-corner-top ui-corner-bottom">
+	<span class="eltd-accordion-mark eltd-left-mark">
+		<span class="eltd-accordion-mark-icon">
+			<span class="icon_plus"></span>
+			<span class="icon_minus-06"></span>
+		</span>
+	</span>
+	<span class="eltd-tab-title">
+		<span class="eltd-tab-title-inner">
+			EN SAVOIR PLUS		</span>
+	</span>
+</h5>
+<div class="eltd-accordion-content ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom" style="display: none;">
+	<div class="eltd-accordion-content-inner">
+		
+	<div class="wpb_text_column wpb_content_element ">
+		<div class="wpb_wrapper">
+		<?php echo term_description($term->term_id, $term->taxonomy); ?>
+		</div>
+	</div>
+	</div>
+</div></div>
+		<?php } ?>
+
+
+
+
+
+
+		<?php
+
+ 
+				}
+			} else {
+				kendall_elated_woocommerce_content();
+			}
+		?>
 <?php get_footer(); ?>
+
