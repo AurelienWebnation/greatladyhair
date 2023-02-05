@@ -11,7 +11,7 @@ get_template_part('slider');
 ?>
 <div class="eltd-section-inner">
 <?php
-woocommerce_breadcrumb();	
+/* woocommerce_breadcrumb(); */	
 ?>
 </div>
 
