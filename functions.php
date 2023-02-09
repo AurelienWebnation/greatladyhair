@@ -82,7 +82,7 @@ function wcc_change_breadcrumb_delimiter( $defaults ) {
 /*
 	Remove woocommerce product-category slug
 */
-add_filter('request', function( $vars ) {
+/* add_filter('request', function( $vars ) {
 	global $wpdb;
 	if( ! empty( $vars['pagename'] ) || ! empty( $vars['category_name'] ) || ! empty( $vars['name'] ) || ! empty( $vars['attachment'] ) ) {
 		$slug = ! empty( $vars['pagename'] ) ? $vars['pagename'] : ( ! empty( $vars['name'] ) ? $vars['name'] : ( !empty( $vars['category_name'] ) ? $vars['category_name'] : $vars['attachment'] ) );
@@ -105,4 +105,4 @@ add_filter('term_link', 'term_link_filter', 10, 3);
 function term_link_filter( $url, $term, $taxonomy ) {
     $url=str_replace("/./","/",$url);
      return $url;
-}
+} */
